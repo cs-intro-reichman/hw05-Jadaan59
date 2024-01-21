@@ -11,7 +11,7 @@ public class GameOfLife {
 		String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
-		//// test1(fileName);
+		test1("square.dat");
 		//// test2(fileName);
 		//// test3(fileName, 3);
 		//// play(fileName);
@@ -63,9 +63,24 @@ public class GameOfLife {
 		int rows = Integer.parseInt(in.readLine());
 		int cols = Integer.parseInt(in.readLine());
 		int[][] board = new int[rows + 2][cols + 2];
-		//// Replace the following statement with your code.
-		return null;
-	}
+
+
+			for (int i = 1; i < rows +1; i++){
+				String str = in.readLine();
+				if (str != null){
+				for (int j = 0; j < str.length(); j++){
+					if (str.charAt(j) == 'x'){
+						board[i][j+1] = 1;
+					}else{
+						board[i][j+1] = 0;
+				}
+				}
+
+			}
+		}
+
+		return board;
+}
 	
 	// Creates a new board from the given board, using the rules of the game.
 	// Uses the cellValue(board,i,j) function to compute the value of each 
